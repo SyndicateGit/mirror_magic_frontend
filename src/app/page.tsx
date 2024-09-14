@@ -11,7 +11,8 @@ import shop2 from "../../public/assets/shop2.png"
 import shop3 from "../../public/assets/shop3.png"
 import shop4 from "../../public/assets/shop4.png"
 import shop5 from "../../public/assets/shop5.png"
-
+import elipse from "../../public/assets/Ellipse22.png"
+import wave from "../../public/assets/wave.png"
 export default function Home() {
   return (
     <div className="w-full overflow-hidden">
@@ -56,7 +57,7 @@ export default function Home() {
       <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[1320px] right-[20px] -rotate-45 translate-x-10"/>
       <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[1420px] right-[20px] -rotate-90 translate-x-10"/>
 
-      <section className="w-full flex flex-col gap-32 h-[5297px]">
+      <section className="w-full flex flex-col gap-32 h-[3097px]">
         <div className="flex gap-8 mx-8 justify-around items-center mt-32">
           <Image src={shop1} width={400} height={450} alt={""} className=""/>
           <p className="text-[32px]">do you have this bad problem
@@ -79,9 +80,28 @@ export default function Home() {
           <Image src={shop5} width={400} height={450} alt={""} className=""/>
         </div>
       </section>
-      <section>
-        
+      <section className="w-full h-[495px] bg-[#FDD9BC] flex justify-center items-center gap-20">
+        <Image src={elipse} width={300} height={300} alt={""} className=""/>
+        <p className="text-gray-600 text-[32px]">smth smth AI magic will make it
+so that you’ve never looked better
+never had more style woah!!</p>
       </section>
+
+      <section className="w-full h-[1000px] flex flex-col">
+        <div className="flex flex-col flex-1">
+          <h4 className="text-5xl self-center flex-1">Example Image Here</h4>
+          <h4 className="text-5xl justify-self-end">Proudly powered by ...</h4>
+        </div>
+        <div className="w-full flex justify-center items-center bg-[#D9D9D9] h-[250px]">
+        </div>
+      </section>
+      <section className="w-full h-[1000px] flex flex-col justify-end relative">
+        <Image src={mirror} width={140} height={140} className="absolute right-[50px] bottom-[220px] z-10" alt={""}/>
+        <Image src={wave} width={2000} height={300} alt={""} className=""/>
+        <Image src={leaf} width={200} height={250} alt={""} className="absolute bottom-10 rotate-45"/>
+        <Image src={leaf} width={200} height={250} alt={""} className="absolute bottom-0 rotate-90"/>
+      </section>
+      
     </div>
   );
 }

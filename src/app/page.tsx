@@ -1,108 +1,115 @@
 import Image from "next/image";
 import Link from "next/link";
 import cloud from "../../public/assets/vector.svg";
-import magic_mirror from "../../public/assets/magic_mirror.png"
-import magic_mirror_girl from "../../public/assets/mirror_magic.png"
-import leaf from "../../public/assets/tropical-ferns-png-7.png"
-import drip from "../../public/assets/Component9.png"
-import mirror from "../../public/assets/m_m.png"
-import shop1 from "../../public/assets/shop1.png"
-import shop2 from "../../public/assets/shop2.png"
-import shop3 from "../../public/assets/shop3.png"
-import shop4 from "../../public/assets/shop4.png"
-import shop5 from "../../public/assets/shop5.png"
-import elipse from "../../public/assets/Ellipse22.png"
-import wave from "../../public/assets/wave.png"
+import magic_mirror from "../../public/assets/magic_mirror.png";
+import magic_mirror_girl from "../../public/assets/mirror_magic.png";
+import leaf from "../../public/assets/tropical-ferns-png-7.png";
+import drip from "../../public/assets/Component9.png";
+import mirror from "../../public/assets/m_m.png";
+import shop1 from "../../public/assets/shop1.png";
+import shop2 from "../../public/assets/shop2.png";
+import shop3 from "../../public/assets/shop3.png";
+import shop4 from "../../public/assets/shop4.png";
+import shop5 from "../../public/assets/shop5.png";
+import elipse from "../../public/assets/Ellipse22.png";
+import wave from "../../public/assets/wave.png";
+import shopify_logo from "../../public/assets/shopify.png";
+import cohere_logo from "../../public/assets/cohere.png";
+import example_image_1 from "../../public/assets/example_image_1.png";
+import example_image_2 from "../../public/assets/example_image_2.png";
+import { Modern_Antiqua } from 'next/font/google';
+
+const modernAntiqua = Modern_Antiqua({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+});
+
 export default function Home() {
   return (
-    <div className="w-full overflow-hidden">
-      <section className="w-full h-[1037px] bg-wet">
-        <div className="flex p-6 justify-between w-full">
+    <div className={`${modernAntiqua.className} w-full overflow-hidden`}>
+      <section className="w-full min-h-screen bg-wet relative p-8">
+        <div className="flex justify-between items-center mb-12">
           <div className="flex">
-            <Image src={cloud} alt="cloud" className="" width={279} height={159}/>
-            <div className="flex-col">
-              <Image src={cloud} alt="cloud" className="" width={130} height={74}/>
-              <Image src={cloud} alt="cloud" className="ml-20" width={191} height={109}/>
+            <Image src={cloud} alt="cloud" width={279} height={159} className="mr-4" />
+            <div className="flex flex-col">
+              <Image src={cloud} alt="cloud" width={130} height={74} className="mb-4" />
+              <Image src={cloud} alt="cloud" width={191} height={109} className="ml-8" />
             </div>
-            
           </div>
-          <Link href={"/info"} className="px-[32px] py-[10px] w-[289px] h-[70px] text-white font-bold rounded-md bg-[#706545]  text-[32px]">Try it</Link>  
+          <Link href="/info" className="px-8 py-3 bg-[#76CBCC] text-white font-bold rounded-md text-3xl hover:bg-[#5fb9ba] transition-colors">
+            Try it
+          </Link>
         </div>
-       
         
-        <div className="w-full flex justify-around py-6 pr-4">
-          <div className="flex flex-col gap-4 flex-1 justify-center items-center">
-            <Image src={magic_mirror} alt="magic mirror" className="" width={577} height={595}/>
-            <h1 className="text-gray-600 font-bold text-2xl">"Step into the Reflection
-            of Your Dreams!"</h1>
+        <div className="flex justify-between items-center">
+          <div className="flex-1 flex flex-col items-center">
+            <Image src={magic_mirror} alt="magic mirror" width={500} height={515} className="mb-6" />
+            <h1 className="text-gray-600 font-bold text-3xl text-center">"Step into the Reflection of Your Dreams!"</h1>
           </div>
           <div className="flex-1">
-            <Image src={magic_mirror_girl} alt="magic mirror girl" className="" width={892} height={862}/>
+            <Image src={magic_mirror_girl} alt="magic mirror girl" width={800} height={775} />
           </div>
         </div>
-      
-        <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[750px] right-[20px] -rotate-45 translate-x-10"/>
-        <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[950px] left-[20px] rotate-45 -translate-x-10"/>
-        <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[1050px] left-[20px] rotate-90 -translate-x-10"/>
         
-      </section>
-      <section className="w-full h-[600px] bg-wet relative">
-      <Image src={drip} width={2047} height={600} alt={""} className="absolute top-[100px] z-[-1]"/>
-      <div className="flex w-full h-[600px] justify-center items-center gap-6">
-        <h2 className="text-[32px] font-semibold">Confidence with clothes that fit!</h2>
-        <Image src={mirror} width={100} height={100} alt={"mirror"} className=""/>
-      </div>
+        <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-12 right-8 -rotate-45" />
+        <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-24 left-8 rotate-45" />
       </section>
 
-      <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[1320px] right-[20px] -rotate-45 translate-x-10"/>
-      <Image src={leaf} width={200} height={250} alt={""} className="absolute top-[1420px] right-[20px] -rotate-90 translate-x-10"/>
-
-      <section className="w-full flex flex-col gap-32 h-[3097px]">
-        <div className="flex gap-8 mx-8 justify-around items-center mt-32">
-          <Image src={shop1} width={400} height={450} alt={""} className=""/>
-          <p className="text-[32px]">do you have this bad problem
-          where you online shop and then when you get the item it looks bad on you?</p>
+      <section className="w-full py-24 bg-wet relative">
+        <Image src={drip} alt="" width={2300} height={400} objectFit="cover" className="z-0 absolute" />
+        <div className="relative z-10 flex justify-center items-center gap-8 mt-32">
+          <h2 className="text-4xl font-semibold">Confidence with clothes that fit!</h2>
+          <Image src={mirror} width={100} height={100} alt="mirror" />
         </div>
-        <div className="flex gap-8 mx-8 justify-around items-center mt-32">
-          <p className="text-[32px]">smth smth let our fairy godmothers take care of you with this newfangled thing called the magic mirror oooooh magic</p>
-          <Image src={shop2} width={400} height={450} alt={""} className=""/>
-        </div>
-        <div className="flex gap-8 mx-8 justify-around items-center mt-32">
-          <Image src={shop3} width={400} height={450} alt={""} className=""/>
-          <p className="text-[32px]">it’s as easy as abracadabra idk it tells you how to do it here and whatnot dude</p>
-        </div>
-        <div className="flex gap-8 mx-8 justify-around items-center mt-32">
-          <p className="text-[32px]">woah now you look amazing and
-          super cool huzzah</p>
-          <Image src={shop4} width={400} height={450} alt={""} className=""/>
-        </div>
-        <div className="flex justify-center items-center">
-          <Image src={shop5} width={400} height={450} alt={""} className=""/>
-        </div>
-      </section>
-      <section className="w-full h-[495px] bg-[#FDD9BC] flex justify-center items-center gap-20">
-        <Image src={elipse} width={300} height={300} alt={""} className=""/>
-        <p className="text-gray-600 text-[32px]">smth smth AI magic will make it
-so that you’ve never looked better
-never had more style woah!!</p>
       </section>
 
-      <section className="w-full h-[1000px] flex flex-col">
-        <div className="flex flex-col flex-1">
-          <h4 className="text-5xl self-center flex-1">Example Image Here</h4>
-          <h4 className="text-5xl justify-self-end">Proudly powered by ...</h4>
+      <section className="w-full py-24 space-y-48 mt-16">
+        <div className="flex justify-between items-center px-16">
+          <Image src={shop1} width={400} height={450} alt="" />
+          <p className="text-3xl max-w-2xl">Do you online shop, but find it hard to discover quality products that fit?</p>
         </div>
-        <div className="w-full flex justify-center items-center bg-[#D9D9D9] h-[250px]">
+        <div className="flex flex-row-reverse justify-between items-center px-16">
+          <Image src={shop2} width={400} height={450} alt="" />
+          <p className="text-3xl max-w-2xl">Magic Mirror lets you see clothes on yourself before you buy them! Our platform also gives you a detailed rundown of the product to help you make informed purchasing decisions!</p>
+        </div>
+        <div className="flex justify-between items-center px-16">
+          <Image src={shop3} width={400} height={450} alt="" />
+          <p className="text-3xl max-w-2xl">It's as easy as uploading a picture of yourself, and the Magic Mirror will do the rest!</p>
+        </div>
+        <div className="flex flex-row-reverse justify-between items-center px-16">
+          <Image src={shop4} width={400} height={450} alt="" />
+          <p className="text-3xl max-w-2xl">Now you look amazing and save time and money shopping!</p>
+        </div>
+        <div className="flex justify-center">
+          <Image src={shop5} width={400} height={450} alt="" />
         </div>
       </section>
-      <section className="w-full h-[1000px] flex flex-col justify-end relative">
-        <Image src={mirror} width={140} height={140} className="absolute right-[50px] bottom-[220px] z-10" alt={""}/>
-        <Image src={wave} width={2000} height={300} alt={""} className=""/>
-        <Image src={leaf} width={200} height={250} alt={""} className="absolute bottom-10 rotate-45"/>
-        <Image src={leaf} width={200} height={250} alt={""} className="absolute bottom-0 rotate-90"/>
+
+      <section className="w-full py-24 bg-[#FDD9BC] flex justify-center items-center gap-20">
+        <Image src={elipse} width={300} height={300} alt="" />
+        <p className="text-gray-600 text-3xl max-w-2xl">AI magic will make it so that you've never had more style!</p>
       </section>
-      
+
+      <section className="w-full py-24 flex flex-col items-center">
+        <h4 className="text-5xl mb-12">Example</h4>
+        <div className="flex justify-center gap-8 mb-24">
+          <Image src={example_image_1} width={600} height={600} alt="Example Image 1" />
+          <Image src={example_image_2} width={600} height={600} alt="Example Image 2" />
+        </div>
+        <h4 className="text-5xl">Proudly powered by ...</h4>
+        <div className="w-full flex justify-center items-center bg-[#D9D9D9] mt-12 py-12">
+          <Image src={shopify_logo} width={200} height={200} alt="Shopify logo" className="mx-8" />
+          <Image src={cohere_logo} width={200} height={200} alt="Cohere logo" className="mx-8" />
+        </div>
+      </section>
+
+      <section className="w-full h-[600px] relative flex items-end">
+        <Image src={mirror} width={140} height={140} className="absolute right-[228px] bottom-[276px] z-10" alt="" />
+        <Image src={wave} layout="fill" objectFit="cover" alt="" />
+        <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-12 left-8 rotate-45" />
+        <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-0 left-24 rotate-90" />
+      </section>
     </div>
   );
 }
-

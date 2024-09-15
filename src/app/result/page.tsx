@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import drip from "../../../public/assets/vector.png";
 import mirror from "../../../public/assets/m_m.png";
 import crown from "../../../public/assets/crown.png";
+import Link from 'next/link';
 
 const Page = () => {
   const [summaryResult, setSummaryResult] = useState({ description: "" });
@@ -85,9 +86,9 @@ const Page = () => {
         </div>
       </div>
       
-      <button className='mt-8 mb-4 bg-[#7E958F] hover:bg-[#6A7F7A] text-white font-bold px-12 py-3 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105'>
-        Confirm
-      </button>
+      <Link href={"/info"} className='mt-8 mb-4 bg-[#7E958F] hover:bg-[#6A7F7A] text-white font-bold px-12 py-3 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105'>
+        Try Again!
+      </Link>
     </div>
   );
 };

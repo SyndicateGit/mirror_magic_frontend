@@ -24,6 +24,10 @@ import example_image_2 from "../../public/assets/example_image_2.png";
 import { Modern_Antiqua } from 'next/font/google';
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import fairy from "../../public/assets/Fairy4.png";
+import fairy3 from "../../public/assets/Fairy3.png";
+import fairy2 from "../../public/assets/Fairy2.png";
+import fairy1 from "../../public/assets/Fairy1.png";
 
 const modernAntiqua = Modern_Antiqua({
   subsets: ['latin'],
@@ -115,24 +119,28 @@ export default function Home() {
 
         <Image src={clouds} alt="cloud" width={179} height={59} className="absolute right-20" />
       <section className="w-full py-24 space-y-48 mt-16">
-        <div className="flex justify-between items-center px-16">
-          <Image src={shop1} width={400} height={450} alt="" />
+        <div className="flex justify-around items-center px-16">
+          <Image src={fairy1} width={300} height={350} alt="" />
           <p className="text-3xl max-w-2xl">Do you online shop, but find it hard to discover quality products that fit?</p>
+          
         </div>
-        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute left-20" />
-        <div className="flex flex-row-reverse justify-between items-center px-16">
-          <Image src={shop2} width={400} height={450} alt="" />
+
+        <div className="flex flex-row-reverse justify-around items-center px-16">
+          <Image src={fairy2} width={300} height={350} alt="" className="scale-x-[-1]" />
           <p className="text-3xl max-w-2xl">Magic Mirror lets you see clothes on yourself before you buy them! Our platform also gives you a detailed rundown of the product to help you make informed purchasing decisions!</p>
         </div>
 
-        <div className="flex justify-between items-center px-16 relative">
+        <div className="flex justify-around items-center px-16 relative">
         <Image src={cloud} alt="cloud" width={179} height={59} className="absolute right-20 top-0" />
-          <Image src={shop3} width={400} height={450} alt="" />
+          <Image src={fairy3} width={300} height={350} alt="" />
           <p className="text-3xl max-w-2xl">It's as easy as uploading a picture of yourself, and the Magic Mirror will do the rest!</p>
         </div>
 
-        <div className="flex flex-row-reverse justify-between items-center px-16">
-          <Image src={shop4} width={400} height={450} alt="" />
+        <div className="flex flex-row-reverse justify-around items-center px-16">
+          <div className="bg-gradient-to-r from-indigo-500 w-[250px] h-[250px] rounded-full">
+          <Image src={fairy} width={400} height={450} alt=""/>
+          </div>
+          
           <p className="text-3xl max-w-2xl">Now you look amazing and save time and money shopping!</p>
         </div>
         <div className="flex justify-center relative">
@@ -160,7 +168,6 @@ export default function Home() {
       </section>
 
       <section className="w-full h-[600px] relative flex items-end">
-        <Image src={mirror} width={140} height={140} className="absolute right-[228px] bottom-[276px] z-10" alt="" />
         <Image src={wave} layout="fill" objectFit="cover" alt="" />
         <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-12 left-8 rotate-45" />
         <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-0 left-24 rotate-90" />

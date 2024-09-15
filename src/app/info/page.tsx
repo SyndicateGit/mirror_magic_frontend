@@ -33,7 +33,7 @@ export default function MagicMirror() {
     console.log(payload);
 
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('/api/upload', { //TODO: Replace with your API endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

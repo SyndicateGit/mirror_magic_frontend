@@ -153,13 +153,13 @@ export default function MagicMirror() {
       </div>
       
       {/* Main Content */}
-      <main className="flex justify-between items-center h-[85vh] w-[100vw] px-[5vw]">
+      <main className="flex justify-between items-center h-[85vh] w-[100vw] px-[5vw] mt-[-20x]">
         {/* Left Section with Image */}
-        <div className="relative w-[50vw] h-[70vh] flex flex-col justify-center items-center">
-          <h2 className="text-[4vw] font-serif mb-[1vh] mt-[-5vh]">
+        <div className="relative w-[50vw] h-[70vh] flex flex-col justify-center items-center gap-12">
+          <h2 className="text-[4vw] font-serif mb-[3vh] mt-[-20px]">
             What do you wish to see...
           </h2>
-          <div className="relative w-[25vw] h-[55vh]"> {/* Adjusted for skinnier, taller shape */}
+          <div className="relative w-[25vw] h-[55vh] mt-[-20px]"> {/* Adjusted for skinnier, taller shape */}
             <CldUploadWidget
               uploadPreset="next_preset"
               onSuccess={handleUploadSuccess}

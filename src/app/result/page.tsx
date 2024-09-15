@@ -52,7 +52,7 @@ const Page = () => {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <CardContent className="flex aspect-video items-center justify-center p-6">
                         <span className="text-3xl font-semibold">{index + 1}</span>
                       </CardContent>
                     </Card>

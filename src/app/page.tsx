@@ -112,25 +112,31 @@ export default function Home() {
         </div>
         
 
-
+        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute right-20" />
       <section className="w-full py-24 space-y-48 mt-16">
         <div className="flex justify-between items-center px-16">
           <Image src={shop1} width={400} height={450} alt="" />
           <p className="text-3xl max-w-2xl">Do you online shop, but find it hard to discover quality products that fit?</p>
         </div>
+        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute left-20" />
         <div className="flex flex-row-reverse justify-between items-center px-16">
           <Image src={shop2} width={400} height={450} alt="" />
           <p className="text-3xl max-w-2xl">Magic Mirror lets you see clothes on yourself before you buy them! Our platform also gives you a detailed rundown of the product to help you make informed purchasing decisions!</p>
         </div>
-        <div className="flex justify-between items-center px-16">
+
+        <div className="flex justify-between items-center px-16 relative">
+        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute right-20 top-0" />
           <Image src={shop3} width={400} height={450} alt="" />
           <p className="text-3xl max-w-2xl">It's as easy as uploading a picture of yourself, and the Magic Mirror will do the rest!</p>
         </div>
+
         <div className="flex flex-row-reverse justify-between items-center px-16">
           <Image src={shop4} width={400} height={450} alt="" />
           <p className="text-3xl max-w-2xl">Now you look amazing and save time and money shopping!</p>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center relative">
+        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute left-12 top-0" />
+        <Image src={cloud} alt="cloud" width={149} height={39} className="absolute left-32 top-28" />
           <Image src={shop5} width={400} height={450} alt="" />
         </div>
       </section>

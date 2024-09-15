@@ -3,11 +3,13 @@
 import { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
+import { useRouter } from 'next/navigation'
 
 export default function MagicMirror() {
   const [userImageUrl, setUserImageUrl] = useState<string | null>(null);
   const [shopifyLink, setShopifyLink] = useState<string>("");
   const [isUploading, setIsUploading] = useState<boolean>(false);
+  const router = useRouter();
 
   // Function to handle the Cloudinary Upload widget result
   const handleUploadSuccess = (result: any) => {
@@ -45,6 +47,9 @@ export default function MagicMirror() {
         const result = await response.json();
         alert('Image and link uploaded successfully!');
         console.log('Server response:', result);
+        if (typeof window !== "undefined")
+        localStorage.setItem('result', JSON.stringify(result)); // Store the result in local storage
+        router.push('/result'); // Redirect to the result page
       } else {
         alert('Failed to upload data.');
         console.error('Server error:', response.statusText);

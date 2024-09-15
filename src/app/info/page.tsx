@@ -4,12 +4,14 @@ import { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
 import { useRouter } from 'next/navigation'
+import Head from "next/head";
 
 export default function MagicMirror() {
   const [userImageUrl, setUserImageUrl] = useState<string | null>(null);
   const [shopifyLink, setShopifyLink] = useState<string>("");
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Function to handle the Cloudinary Upload widget result
   const handleUploadSuccess = (result: any) => {
@@ -43,6 +45,7 @@ export default function MagicMirror() {
     }
 
     try {
+      setIsLoading(true);
       const summary_response = await fetch('http://localhost:8080/summary/', {
         method: 'POST',
         headers: {
@@ -77,8 +80,51 @@ export default function MagicMirror() {
       alert('Error uploading data.' + error + "test");
     } finally {
       setIsUploading(false);
+      setIsLoading(false);
     }
   };
+
+  if(isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-300 flex items-center justify-center">
+      <Head>
+        <title>Loading - Fairy Godmother Outfit Fitting</title>
+        <meta name="description" content="Loading page for fairy godmother outfit fitting" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className="w-[90vw] h-[50vh] relative bg-gradient-to-b from-[#B4E7F8] to-[#F8D0CB] rounded-lg shadow-lg overflow-hidden">
+        {/* Dripping effect */}
+        <div className="absolute top-0 left-0 right-0 h-[5vh] bg-[#B4E7F8]">
+          <div className="flex justify-between">
+            {[...Array(10)].map((_, i) => (
+              <div 
+                key={i} 
+                className="w-[8vw] h-[3vh] bg-[#B4E7F8] rounded-b-full"
+                style={{transform: `translateY(${2 + Math.random() * 2}vh)`}}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          {/* Replace this div with your actual loading graphic */}
+          <div className="w-[10vw] h-[10vw] rounded-full border-4 border-pink-300 border-t-pink-500 animate-spin" />
+        </div>
+
+        {/* Loading text */}
+        <div className="absolute bottom-[5vh] left-0 right-0 text-center">
+          <p className="text-[2.5vw] text-gray-700 font-serif">
+            The Fairy godmothers are fitting your outfit
+          </p>
+          <p className="text-[2vw] text-gray-600 font-serif mt-2">
+            please be patient
+          </p>
+        </div>
+      </main>
+    </div>
+    )
+  }
 
   return (
     <div className="w-full h-full bg-gray-200">

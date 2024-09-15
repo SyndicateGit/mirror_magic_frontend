@@ -120,18 +120,21 @@ export default function Home() {
         <Image src={clouds} alt="cloud" width={179} height={59} className="absolute right-20" />
       <section className="w-full py-24 space-y-48 mt-16">
         <div className="flex justify-around items-center px-16">
+        <div className="bg-gradient-to-r from-indigo-500 w-[250px] h-[250px] absolute rounded-full left-32 z-[-1]"></div>
           <Image src={fairy1} width={300} height={350} alt="" />
           <p className="text-3xl max-w-2xl">Do you online shop, but find it hard to discover quality products that fit?</p>
           
         </div>
 
         <div className="flex flex-row-reverse justify-around items-center px-16">
+        <div className="bg-gradient-to-r from-indigo-500 w-[250px] h-[250px] absolute rounded-full right-32 z-[-1]"></div>
           <Image src={fairy2} width={300} height={350} alt="" className="scale-x-[-1]" />
           <p className="text-3xl max-w-2xl">Magic Mirror lets you see clothes on yourself before you buy them! Our platform also gives you a detailed rundown of the product to help you make informed purchasing decisions!</p>
         </div>
 
         <div className="flex justify-around items-center px-16 relative">
         <Image src={cloud} alt="cloud" width={179} height={59} className="absolute right-20 top-0" />
+        <div className="bg-gradient-to-r from-indigo-500 w-[250px] h-[250px] absolute rounded-full left-32 z-[-1]"></div>
           <Image src={fairy3} width={300} height={350} alt="" />
           <p className="text-3xl max-w-2xl">It's as easy as uploading a picture of yourself, and the Magic Mirror will do the rest!</p>
         </div>

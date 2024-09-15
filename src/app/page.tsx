@@ -161,13 +161,13 @@ export default function Home() {
           <Image src={example_image_2} width={600} height={600} alt="Example Image 2" />
         </div>
         <h4 className="text-5xl">Proudly powered by ...</h4>
-        <div className="w-full flex justify-center items-center bg-[#D9D9D9] mt-12 py-12">
+        <div className="w-full flex justify-center items-center bg-[#D9D9D9] py-12">
           <Image src={shopify_logo} width={200} height={200} alt="Shopify logo" className="mx-8" />
           <Image src={cohere_logo} width={200} height={200} alt="Cohere logo" className="mx-8" />
         </div>
       </section>
 
-      <section className="w-full h-[600px] relative flex items-end">
+      <section className="w-full h-[600px] relative flex items-end bg-gradient-to-t from-[#de959cf4]">
         <Image src={wave} layout="fill" objectFit="cover" alt="" />
         <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-12 left-8 rotate-45" />
         <Image src={leaf} width={150} height={187} alt="" className="absolute bottom-0 left-24 rotate-90" />

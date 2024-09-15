@@ -28,6 +28,7 @@ import fairy from "../../public/assets/Fairy4.png";
 import fairy3 from "../../public/assets/Fairy3.png";
 import fairy2 from "../../public/assets/Fairy2.png";
 import fairy1 from "../../public/assets/Fairy1.png";
+import MMHero from "../../public/assets/MMhero.png";
 
 const modernAntiqua = Modern_Antiqua({
   subsets: ['latin'],
@@ -76,7 +77,7 @@ export default function Home() {
             <h1 className="text-gray-600 font-bold text-3xl text-center">"Step into the Reflection of Your Dreams!"</h1>
           </div>
           <div className="flex-1">
-            <Image src={magic_mirror_girl} alt="magic mirror girl" width={800} height={775} />
+            <Image src={MMHero} alt="magic mirror girl" width={800} height={775} className="box-shadow: 0 0 5px 5px [#FDD9BC];"/>
           </div>
         </div>
         

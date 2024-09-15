@@ -51,7 +51,7 @@ const Page = () => {
       <section className='flex mt-[100px] justify-around items-center w-full h-full'>
         <div className='flex flex-col justify-center items-center shrink-0'>
           <Image src={crown} width={600} height={400} alt=''/>
-          <img src={tryon_response.img_url} alt="User Image" width={200} height={200} className="rounded-lg" />
+          <img src={tryon_response.img_url} alt="User Image" width={400} height={700} className="rounded-lg" />
         </div>
         <h2 className='font-semibold overflow-auto'>{summary_response.description}</h2>
       </section>

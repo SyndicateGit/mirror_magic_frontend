@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
 import cloud from "../../public/assets/vector.svg";
@@ -11,6 +12,8 @@ import shop2 from "../../public/assets/shop2.png";
 import shop3 from "../../public/assets/shop3.png";
 import shop4 from "../../public/assets/shop4.png";
 import shop5 from "../../public/assets/shop5.png";
+import example from "../../public/assets/example_image_1.png";
+import example2 from "../../public/assets/example_image_2.png";
 import elipse from "../../public/assets/Ellipse22.png";
 import wave from "../../public/assets/wave.png";
 import shopify_logo from "../../public/assets/shopify.png";
@@ -18,6 +21,8 @@ import cohere_logo from "../../public/assets/cohere.png";
 import example_image_1 from "../../public/assets/example_image_1.png";
 import example_image_2 from "../../public/assets/example_image_2.png";
 import { Modern_Antiqua } from 'next/font/google';
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const modernAntiqua = Modern_Antiqua({
   subsets: ['latin'],
@@ -26,6 +31,24 @@ const modernAntiqua = Modern_Antiqua({
 });
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex: number) =>
+      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+  
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex: number) =>
+      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
+    );
+  };
+  
+  const carouselImages = [
+    example,
+    example2
+  ];
   return (
     <div className={`${modernAntiqua.className} w-full overflow-hidden`}>
       <section className="w-full min-h-screen bg-wet relative p-8">
@@ -63,6 +86,32 @@ export default function Home() {
           <Image src={mirror} width={100} height={100} alt="mirror" />
         </div>
       </section>
+
+      <div className='flex flex-col items-center self-center ml-[360px] mt-[250px] space-y-[-2rem] md:w-1/2'>
+          <div className='relative'>
+            <div className='w-[300px] h-[400px] bg-white rounded-t-full overflow-hidden shadow-lg relative'>
+              <Image 
+                src={carouselImages[currentImageIndex]}
+                alt={`Carousel Image ${currentImageIndex + 1}`}
+                className="w-full h-full object-cover object-top"
+              />
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+        
+
 
       <section className="w-full py-24 space-y-48 mt-16">
         <div className="flex justify-between items-center px-16">

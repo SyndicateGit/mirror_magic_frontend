@@ -38,13 +38,13 @@ const Page = () => {
   ];
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
+    setCurrentImageIndex((prevIndex: number) =>
       prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
     );
   };
-
+  
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
+    setCurrentImageIndex((prevIndex: number) =>
       prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
     );
   };

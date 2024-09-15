@@ -2,63 +2,61 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import drip from "../../../public/assets/vector.png";
-import wave from "../../../public/assets/Component9.png";
 import mirror from "../../../public/assets/m_m.png";
 import crown from "../../../public/assets/crown.png";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import { Card, CardContent } from '@/components/ui/card';
-
-const summary_response = {
-    description: "The Daring Cheetah Print Sweater is a must-have fashion item for those seeking a bold and unique addition to their wardrobe. With its eye-catching design, this sweater is sure to make a statement wherever you go. The product description highlights its appeal to women who embrace their individuality and want to make a stylish impact.\n\nCrafted with a focus on comfort, this sweater is made from an ultra-soft fabric, ensuring a cozy and pleasant wearing experience. The cheetah print pattern adds a touch of wild elegance, allowing wearers to embrace their fierce and feminine side. Its versatility is a key feature, as it can be effortlessly styled for various occasions, from casual daytime looks with jeans to more dressed-up evening ensembles.\n\nReviews for this sweater are generally positive, with many customers raving about its softness, warmth, and eye-catching design. It has earned a 5-star rating from multiple reviewers, who appreciate its high-quality fabric and the confidence it instills. One reviewer mentions that it has become a staple in their casual wardrobe and consistently receives compliments. Another customer rates it 4 stars, indicating that while they enjoy the print and fit, they would have preferred a slightly thicker material. Despite this minor critique, the overall feedback suggests that this sweater delivers on its promise of style and comfort.\n\nIn summary, the Daring Cheetah Print Sweater is a fashionable choice for women seeking a statement piece that combines comfort and bold aesthetics. Its soft fabric and versatile design make it a popular option, as evidenced by the positive customer reviews. Whether you're looking to upgrade your casual outfits or add a touch of wild elegance to your style, this sweater is a confident choice."
-  
-}
-
-const tryon_response = {"message":"Success","img_url":"https://res.cloudinary.com/djwt4zrhz/image/upload/v1726378584/mmybdqsuqywzboxsj7rr.png"}
-
 const Page = () => {
-  // State to store result from localStorage
-  const [summaryresult, setSummaryResult] = useState<{description: string}>({ description: "" });
-  const [tryonresult, setTryonResult] = useState<{img_url: string}>({ img_url: "" });
+  const [summaryResult, setSummaryResult] = useState({ description: "" });
+  const [tryonResult, setTryonResult] = useState({ img_url: "" });
 
-  // Effect to retrieve data from localStorage once the component has mounted
   useEffect(() => {
-    // Check if localStorage is available
     if (typeof window !== "undefined") {
       const storedResult = localStorage.getItem('summary_result');
       const tryOnResult = localStorage.getItem('tryon_result');
-      if (storedResult) {
-        setSummaryResult(JSON.parse(storedResult));
-      }
-      if (tryOnResult) {
-        setTryonResult(JSON.parse(tryOnResult));
-      }
+      if (storedResult) setSummaryResult(JSON.parse(storedResult));
+      if (tryOnResult) setTryonResult(JSON.parse(tryOnResult));
     }
   }, []);
 
-  console.log('summaryresult:', summaryresult);
+  const summary_response = {
+    description: "The Daring Cheetah Print Sweater is a must-have fashion item for those seeking a bold and unique addition to their wardrobe. With its eye-catching design, this sweater is sure to make a statement wherever you go. The product description highlights its appeal to women who embrace their individuality and want to make a stylish impact.\n\nCrafted with a focus on comfort, this sweater is made from an ultra-soft fabric, ensuring a cozy and pleasant wearing experience. The cheetah print pattern adds a touch of wild elegance, allowing wearers to embrace their fierce and feminine side. Its versatility is a key feature, as it can be effortlessly styled for various occasions, from casual daytime looks with jeans to more dressed-up evening ensembles.\n\nReviews for this sweater are generally positive, with many customers raving about its softness, warmth, and eye-catching design. It has earned a 5-star rating from multiple reviewers, who appreciate its high-quality fabric and the confidence it instills. One reviewer mentions that it has become a staple in their casual wardrobe and consistently receives compliments. Another customer rates it 4 stars, indicating that while they enjoy the print and fit, they would have preferred a slightly thicker material. Despite this minor critique, the overall feedback suggests that this sweater delivers on its promise of style and comfort.\n\nIn summary, the Daring Cheetah Print Sweater is a fashionable choice for women seeking a statement piece that combines comfort and bold aesthetics. Its soft fabric and versatile design make it a popular option, as evidenced by the positive customer reviews. Whether you're looking to upgrade your casual outfits or add a touch of wild elegance to your style, this sweater is a confident choice."
+  };
+
+  const tryon_response = {
+    "message": "Success",
+    "img_url": "https://res.cloudinary.com/djwt4zrhz/image/upload/v1726378584/mmybdqsuqywzboxsj7rr.png"
+  };
 
   return (
-    <div className='w-full h-full flex flex-col justify-center items-center'>
-        <Image src={drip} width={2047} height={1200} alt={""} className="absolute top-0" />
-        <Image src={mirror} width={75} height={75} alt={"mirror"} className="absolute top-2 left-2" />
-      <section className='flex mt-[100px] justify-around items-center w-full h-full'>
-        <div className='flex flex-col justify-center items-center shrink-0'>
-          <Image src={crown} width={600} height={400} alt=''/>
-          <img src={tryon_response.img_url} alt="User Image" width={400} height={700} className="rounded-lg" />
+    <div className='w-full min-h-screen bg-[#F8E3DD] flex flex-col justify-center items-center relative'>
+      <Image src={drip} width={2300} height={200} alt="" className="absolute top-0 z-0" />
+      <Image src={mirror} width={75} height={75} alt="mirror" className="absolute top-4 left-4 z-10" />
+      
+      <div className='w-full max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-8 z-10'>
+        <div className='flex flex-col items-center space-y-[-2rem] md:w-1/2'>
+          <div className='relative'>
+            <Image src={crown} width={300} height={200} alt='' className='mb-[-3rem]' />
+            <div className='w-[300px] h-[400px] bg-white rounded-t-full overflow-hidden shadow-lg'>
+              <img 
+                src={tryon_response.img_url} 
+                alt="User Image" 
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
         </div>
-        <h2 className='font-semibold overflow-auto'>{summary_response.description}</h2>
-      </section>
-      <button className='self-center bg-[#7E958F] text-white font-bold px-24 pt-10 rounded-sm flex justify-center items-center'>Confirm</button>        
+        
+        <div className='md:w-1/2 bg-white bg-opacity-80 p-6 rounded-lg shadow-lg max-h-[70vh] overflow-y-auto'>
+          <h2 className='font-semibold text-lg mb-4'>Product Description</h2>
+          <p className='text-sm'>{summary_response.description}</p>
+        </div>
+      </div>
+      
+      <button className='mt-8 mb-4 bg-[#7E958F] hover:bg-[#6A7F7A] text-white font-bold px-12 py-3 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105'>
+        Confirm
+      </button>
     </div>
   );
 };
 
 export default Page;
-

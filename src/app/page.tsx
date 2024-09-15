@@ -26,7 +26,7 @@ export default function Home() {
             </div>
             
           </div>
-          <button className="px-[32px] py-[10px] w-[289px] h-[70px] text-white font-bold rounded-md bg-[#706545]  text-[32px]">Try it</button>  
+          <Link href={"/info"} className="px-[32px] py-[10px] w-[289px] h-[70px] text-white font-bold rounded-md bg-[#706545]  text-[32px]">Try it</Link>  
         </div>
        
         

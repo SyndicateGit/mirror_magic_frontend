@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import cloud from "../../public/assets/vector.svg";
+import clouds from "../../public/assets/clouds.png";
 import magic_mirror from "../../public/assets/magic_mirror.png";
 import magic_mirror_girl from "../../public/assets/mirror_magic.png";
 import leaf from "../../public/assets/tropical-ferns-png-7.png";
@@ -112,7 +113,7 @@ export default function Home() {
         </div>
         
 
-        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute right-20" />
+        <Image src={clouds} alt="cloud" width={179} height={59} className="absolute right-20" />
       <section className="w-full py-24 space-y-48 mt-16">
         <div className="flex justify-between items-center px-16">
           <Image src={shop1} width={400} height={450} alt="" />
@@ -135,8 +136,7 @@ export default function Home() {
           <p className="text-3xl max-w-2xl">Now you look amazing and save time and money shopping!</p>
         </div>
         <div className="flex justify-center relative">
-        <Image src={cloud} alt="cloud" width={179} height={59} className="absolute left-12 top-0" />
-        <Image src={cloud} alt="cloud" width={149} height={39} className="absolute left-32 top-28" />
+        <Image src={clouds} alt="cloud" width={179} height={59} className="absolute left-12 top-0" />
           <Image src={shop5} width={400} height={450} alt="" />
         </div>
       </section>

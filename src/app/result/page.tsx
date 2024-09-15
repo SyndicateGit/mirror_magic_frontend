@@ -1,6 +1,7 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import drip from "../../../public/assets/vector.png";
 import mirror from "../../../public/assets/m_m.png";
 import crown from "../../../public/assets/crown.png";
@@ -8,6 +9,7 @@ import crown from "../../../public/assets/crown.png";
 const Page = () => {
   const [summaryResult, setSummaryResult] = useState({ description: "" });
   const [tryonResult, setTryonResult] = useState({ img_url: "" });
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -27,6 +29,25 @@ const Page = () => {
     "img_url": "https://res.cloudinary.com/djwt4zrhz/image/upload/v1726378584/mmybdqsuqywzboxsj7rr.png"
   };
 
+  const carouselImages = [
+    "https://res.cloudinary.com/djwt4zrhz/image/upload/v1726378584/mmybdqsuqywzboxsj7rr.png",
+    "https://res.cloudinary.com/djwt4zrhz/image/upload/v1726378584/mmybdqsuqywzboxsj7rr.png",
+    "https://res.cloudinary.com/djwt4zrhz/image/upload/v1726378584/mmybdqsuqywzboxsj7rr.png",
+    // Add more image paths as needed
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div className='w-full min-h-screen bg-[#F8E3DD] flex flex-col justify-center items-center relative'>
       <Image src={drip} width={2300} height={200} alt="" className="absolute top-0 z-0" />
@@ -36,12 +57,24 @@ const Page = () => {
         <div className='flex flex-col items-center space-y-[-2rem] md:w-1/2'>
           <div className='relative'>
             <Image src={crown} width={300} height={200} alt='' className='mb-[-3rem]' />
-            <div className='w-[300px] h-[400px] bg-white rounded-t-full overflow-hidden shadow-lg'>
+            <div className='w-[300px] h-[400px] bg-white rounded-t-full overflow-hidden shadow-lg relative'>
               <img 
-                src={tryon_response.img_url} 
-                alt="User Image" 
+                src={carouselImages[currentImageIndex]}
+                alt={`Carousel Image ${currentImageIndex + 1}`}
                 className="w-full h-full object-cover object-top"
               />
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2"
+              >
+                <ChevronRight size={24} />
+              </button>
             </div>
           </div>
         </div>

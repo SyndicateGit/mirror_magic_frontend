@@ -89,7 +89,7 @@ export default function Home() {
 
       <div className='flex flex-col items-center self-center ml-[360px] mt-[250px] space-y-[-2rem] md:w-1/2'>
           <div className='relative'>
-            <div className='w-[300px] h-[400px] bg-white rounded-t-full overflow-hidden shadow-lg relative'>
+            <div className='w-[350px] h-[470px] bg-white rounded-t-full overflow-hidden shadow-lg relative'>
               <Image 
                 src={carouselImages[currentImageIndex]}
                 alt={`Carousel Image ${currentImageIndex + 1}`}
